@@ -3,6 +3,7 @@
   "description": "This extension will give you a notification with information of the topic you are struggling to study in class",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": ["notifications"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
