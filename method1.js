@@ -1,5 +1,9 @@
 function createFields() {
   const numSubjects = document.getElementById("numSubjects").value;
+  if (numSubjects < 1 || numSubjects > 10) {
+    alert("Please enter a number between 1 and 10.");
+    return; 
+  }
   const container = document.getElementById("subjectFields");
   
   container.innerHTML = "";
@@ -13,4 +17,6 @@ function createFields() {
     container.appendChild(input);
     container.appendChild(document.createElement("br"));
   }
+  document.getElementById("numSubjects").disabled = true;
+  document.getElementById("confirmButton").disabled = true; 
 }
