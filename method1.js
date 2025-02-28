@@ -1,22 +1,29 @@
 function createFields() {
   const numSubjects = document.getElementById("numSubjects").value;
+  
   if (numSubjects < 1 || numSubjects > 10) {
     alert("Please enter a number between 1 and 10.");
-    return; 
+    return;
   }
-  const container = document.getElementById("subjectFields");
   
-  container.innerHTML = "";
+  const container = document.getElementById("subjectFields");
+  container.innerHTML = ""; 
   
   for (let i = 1; i <= numSubjects; i++) {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = `Subject ${i}`;
-    input.id = `subject${i}`;
-    
-    container.appendChild(input);
-    container.appendChild(document.createElement("br"));
+    container.innerHTML += `<label>Subject ${i}: </label><input type="text" id="subject${i}" placeholder="Enter subject ${i}"><br>`;
   }
-  document.getElementById("numSubjects").disabled = true;
-  document.getElementById("confirmButton").disabled = true; 
+  
+  container.innerHTML += `<button onclick="saveSubjects()">Save Subjects</button>`;
+  }
+  
+  function saveSubjects() {
+  let subjectsArray = [];
+  const numSubjects = document.getElementById("numSubjects").value;
+  
+  for (let i = 1; i <= numSubjects; i++) {
+    const subject = document.getElementById(`subject${i}`).value;
+    subjectsArray.push(subject);
+  }
+  
+  console.log(subjectsArray);
 }
