@@ -8,8 +8,8 @@
   "default_popup": "popup.html",
   "default_icon": "icon.png",
   "default_popup_size": {
-    "width": 400,
-    "height": 600
+    "width": 800,
+    "height": 1000
   }
 }
 }
