@@ -10,33 +10,16 @@
         padding: 10px;
         font-family: Arial, sans-serif;
         box-sizing: border-box;
-    }
-  </style>
+      }
+    </style>
   </head>
   <body>
     <h1>How many subjects do you take?</h1>
-  <input type="number" id="numSubjects" placeholder="Enter number"/>
-  <button id="confirmButton">Confirm</button> 
-  
-  <div id="subjectFields"></div>
+    <input type="number" id="numSubjects" placeholder="Enter number" min="1" max="10"/>
+    <button onclick="createFields()">Confirm</button> 
 
-  <script src="method1.js"></script>
+    <div id="subjectFields"></div>
 
-  <script>
-    let subjectsArray = [];
-    for (let i = 1; i <= numSubjects; i++) {
-      document.write(`<label>Subject ${i}: </label>`);
-      document.write(`<input type="text" id="subject${i}" placeholder="Enter subject ${i}" /><br>`);
-    }
-    function saveSubjects() {
-        for (let i = 1; i <= numSubjects; i++) {
-          let subject = document.getElementById(`subject${i}`).value; 
-          subjectsArray.push(subject); 
-        }
-        console.log(subjectsArray);
-      }
-    document.write('<button onclick="saveSubjects()">Save Subjects</button>');
-  </script>
-    
+    <script src="method1.js"></script>
   </body>
 </html>
