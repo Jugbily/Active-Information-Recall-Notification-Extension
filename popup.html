@@ -21,5 +21,22 @@
   <div id="subjectFields"></div>
 
   <script src="method1.js"></script>
+
+  <script>
+    let subjectsArray = [];
+    for (let i = 1; i <= numSubjects; i++) {
+      document.write(`<label>Subject ${i}: </label>`);
+      document.write(`<input type="text" id="subject${i}" placeholder="Enter subject ${i}" /><br>`);
+    }
+    function saveSubjects() {
+        for (let i = 1; i <= numSubjects; i++) {
+          let subject = document.getElementById(`subject${i}`).value; 
+          subjectsArray.push(subject); 
+        }
+        console.log(subjectsArray);
+      }
+    document.write('<button onclick="saveSubjects()">Save Subjects</button>');
+  </script>
+    
   </body>
 </html>
